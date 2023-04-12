@@ -2,6 +2,9 @@ from flask import Flask, flash, request, redirect, url_for, render_template
 import urllib.request
 import os
 from werkzeug.utils import secure_filename
+import cv2
+from htr_pipeline import read_page, DetectorConfig
+
 app = Flask(__name__)
 UPLOAD_FOLDER = 'static/uploads/'
 app.secret_key = "secret_base_key"
@@ -27,11 +30,19 @@ def upload_image():
     if file and allowed_file(file.filename):
         filename = secure_filename(file.filename)
         file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
-        flash('Image successfully uploaded and displayed below')
-        return render_template('main.html', filename=filename)
+        image_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
+        read_lines = predict(image_path)
+        flash('Successfull')
+        return render_template('main.html', filename=filename, read_lines=read_lines)
     else:
         flash('Allowed image types are - png, jpg, jpeg, gif')
         return redirect(request.url)
+
+def predict(image_path):
+    img = cv2.imread(image_path, cv2.IMREAD_GRAYSCALE)
+    read_lines = read_page(img, DetectorConfig(height=1000))
+    return read_lines
+
 @app.route('/display/<filename>')
 def display_image(filename):
     return redirect(url_for('static', filename='uploads/' + filename), code=301)
@@ -40,4 +51,4 @@ def display_image(filename):
 def ppt():
     return render_template('ppt.html')
 if __name__ == "__main__":
-    app.run()
+    app.run(host= '0.0.0.0')

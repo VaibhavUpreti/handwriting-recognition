@@ -27,7 +27,17 @@
   <p><h1 align="center">Handwriting Recognition Model</h1></p>
 <div class="container">
   <div class="row">
+<p>
 
+<h3>ML model output</h2>
+{% if read_lines %}
+    <ul>
+        {% for read_line in read_lines %}
+            <li>{{ ' '.join(read_word.text for read_word in read_line) }}</li>
+        {% endfor %}
+    </ul>
+{% endif %}
+</p>
   <h3>Select Image</h2>
   <br>
   &nbsp;
@@ -55,7 +65,6 @@
     </form>
 
 </div>
-  <h3>ML model output:</h2>
 </div>
 </body>
 </html>
