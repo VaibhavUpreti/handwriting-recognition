@@ -4,7 +4,7 @@ import os
 from werkzeug.utils import secure_filename
 import cv2
 # from htr_pipeline import read_page, DetectorConfig
-from src.predict import get_img_text
+from predict import get_img_text
 
 app = Flask(__name__)
 UPLOAD_FOLDER = 'static/uploads/'
@@ -34,7 +34,7 @@ def upload_image():
         image_path = os.path.join(app.config['UPLOAD_FOLDER'], filename)
         # read_lines = predict(image_path)
         image_inst = cv2.imread(image_path)
-        img,text=get_img_text(image_path)
+        img,text=get_img_text(image_inst)
         flash('Successfull')
         return render_template('main.html', filename=filename, read_lines=text, image=img)
     else:
