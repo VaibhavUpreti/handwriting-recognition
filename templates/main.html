@@ -65,9 +65,9 @@
         </dl>
         <p><input type="submit" value="Submit" class="btn btn-info"></p>
     </form>
-   {% if filename %}
+   {% if image %}
         <div class="container-fluid">
-		  <img src="{{ url_for('display_image', filename=filename) }}" height="1000px" width="1000px">
+		  <img src="{{ url_for('display_image', filename=image) }}" height="1000px" width="1000px">
         </div>
     {% endif %}
 </div>
