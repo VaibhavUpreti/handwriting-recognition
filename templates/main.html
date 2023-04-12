@@ -30,15 +30,22 @@
 <p>
 
 <h3>ML model output</h2>
+
+<p>
 {% if read_lines %}
-    <ul>
-        {% for read_line in read_lines %}
-            <li>{{ ' '.join(read_word.text for read_word in read_line) }}</li>
+  <p>
+    {% for read_line in read_lines %}
+        {% for read_word in read_line %}
+          {{ read_word.text }}{% if not loop.last %} {% endif %}
         {% endfor %}
-    </ul>
+    {% endfor %}
+  </p>
 {% endif %}
+
 </p>
-  <h3>Select Image</h2>
+<br>
+<br>
+  <h3>Choose Image</h2>
   <br>
   &nbsp;
   &nbsp;
@@ -53,17 +60,16 @@
           {% endif %}
         {% endwith %}
     </p>
-    {% if filename %}
-        <div class="container-fluid">
-		  <img src="{{ url_for('display_image', filename=filename) }}" height="1000px" width="1000px">
-        </div>
-    {% endif %}
     <form method="post" action="/" enctype="multipart/form-data">
         <dl><p><input type="file" name="file" class="form-control" autocomplete="off" required></p>
         </dl>
         <p><input type="submit" value="Submit" class="btn btn-info"></p>
     </form>
-
+   {% if filename %}
+        <div class="container-fluid">
+		  <img src="{{ url_for('display_image', filename=filename) }}" height="1000px" width="1000px">
+        </div>
+    {% endif %}
 </div>
 </div>
 </body>
