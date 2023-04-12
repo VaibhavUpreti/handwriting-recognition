@@ -33,19 +33,15 @@
 <p>
 {% if read_lines %}
   <p>
-   {% read_lines %} 
+  {{ read_lines }} 
   </p>
 {% endif %}
 
-</p>
 </p>
 <hr>
 <br>
 <br>
   <h3>Choose Image</h2>
-  <br>
-  &nbsp;
-  &nbsp;
     <p>
         {% with messages = get_flashed_messages() %}
           {% if messages %}
@@ -58,8 +54,9 @@
         {% endwith %}
     </p>
     <form method="post" action="/" enctype="multipart/form-data">
-        <dl><p><input type="file" name="file" class="form-control" autocomplete="off" required></p>
-        </dl>
+		<div class="file-upload-wrapper">
+          <input type="file" name="file" id="input-file-now-custom-2" class="file-upload" data-height="500" />
+        </div>
         <p><input type="submit" value="Submit" class="btn btn-info"></p>
     </form>
    {% if filename %}
