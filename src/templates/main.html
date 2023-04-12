@@ -26,7 +26,6 @@
 <body>
   <p><h1 align="center">Handwriting Recognition Model</h1></p>
 <div class="container">
-  <div class="row">
 <p>
 
 <h3>ML model output</h2>
@@ -34,22 +33,11 @@
 <p>
 {% if read_lines %}
   <p>
-    {% for read_line in read_lines %}
-        {% for read_word in read_line %}
-          {{ read_word.text }}{% if not loop.last %} {% endif %}
-        {% endfor %}
-    {% endfor %}
+   {% read_lines %} 
   </p>
 {% endif %}
 
 </p>
-
-<p>
-{% if read_lines %}
-    <div>
-        {{ read_lines }}
-    </div>
-{% endif %}
 </p>
 <hr>
 <br>
