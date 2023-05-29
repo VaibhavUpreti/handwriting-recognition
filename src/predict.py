@@ -50,7 +50,9 @@ def word_pred(img,cord,ctc_beam):
     for i in boxes:
         temp=i.xyxy
         # print(temp)
-        word.append([int(temp[0][0])+cord[0]-10,int(temp[0][1])+cord[1]-10, int(temp[0][2])+cord[0]+10,int(temp[0][3])+cord[1]+10])
+        word.append([int(temp[0][0])+cord[0],int(temp[0][1])+cord[1], int(temp[0][2])+cord[0],int(temp[0][3])+cord[1]])
+        # Buggy
+        # word.append([int(temp[0][0])+cord[0]-10,int(temp[0][1])+cord[1]-10, int(temp[0][2])+cord[0]+10,int(temp[0][3])+cord[1]+10])
     
     word = sorted(word, key=lambda x:x[0])
 
