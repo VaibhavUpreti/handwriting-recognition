@@ -1,7 +1,6 @@
 # Handwriting Recognition
 
 Handing writing Recognition flask app.
-
 # Requirements
 
 1. Python version >= 3.8
