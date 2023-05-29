@@ -54,4 +54,6 @@ def display_image(filename):
 def ppt():
     return render_template('ppt.html')
 if __name__ == "__main__":
-    app.run(host= '0.0.0.0')
+    # app.run(host= '0.0.0.0')
+    # Waitress config
+    serve(app, host='0.0.0.0', port=5000)
