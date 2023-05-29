@@ -38,7 +38,7 @@ def upload_image():
         flash('Successfull')
         return render_template('main.html', filename=filename, read_lines=text, image=img)
     else:
-        flash('Allowed image types are - png, jpg, jpeg, gif')
+        flash('Allowed image types are - png, jpg, jpeg')
         return redirect(request.url)
 
 def predict(image_path):
@@ -54,6 +54,4 @@ def display_image(filename):
 def ppt():
     return render_template('ppt.html')
 if __name__ == "__main__":
-    # app.run(host= '0.0.0.0')
-    # Waitress config
-    serve(app, host='0.0.0.0', port=5000)
+    app.run(host= '0.0.0.0')
