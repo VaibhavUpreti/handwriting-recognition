@@ -2,6 +2,11 @@
 
 Handing writing Recognition flask app.
 
+# Requirements
+
+1. Python version >= 3.8
+2. CtcWordBeamSearch
+3. SimpleHTR 
 
 # Applications
 
