@@ -13,25 +13,10 @@ Handing writing Recognition flask app.
 2. Use in text editors: It can be used for converting written images to text eg: in a blog
 
 
-# What's Next
-
-1. Add support for text editors, ref trix editor [red](https://trix-editor.org/)
-2. Improve infrastructure by adpoting Docker based setup.
-3. Improve Documentation, diversify setup(docker, api, run as microservices).
-
-
 # Deployment Infrastructure
 
-Deployed on AWS EC2 instance using a simple flask application that shows basic application of the model.
-
+The flask app is deployed on an AWS EC2 instance.
+ 
 ![img](https://user-images.githubusercontent.com/85568177/231553039-bf41759a-b902-4864-a806-81fd36577c1c.jpg)
-
-# Challenges
-
-During the development and deployment of the application, we encountered several challenges. These challenges included:
-
-1. The need to ensure that the correct environment and packages were set up to enable the application to run smoothly. This involved ensuring that all libraries had the correct dependencies, and that they were all installed correctly. Eg python version 3.8 instead of python 3.10(default on ubuntu ec2).
-2. The optimization of application performance by running the model asynchronously as a background job. This helped to ensure that the application ran smoothly and quickly, without being bogged down by lengthy processing times.
-3. Addressing issues with recursive calling of RNN layers, which can be a common problem in machine learning applications. This required careful debugging and testing to ensure that the application could handle complex, recursive processes without encountering errors.
 
 
