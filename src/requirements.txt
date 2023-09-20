@@ -1,0 +1,8 @@
+opencv-python
+editdistance
+ultralytics
+flask
+tensorflow
+lmdb
+path
+gunicorn

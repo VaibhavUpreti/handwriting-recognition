@@ -20,6 +20,7 @@ def allowed_file(filename):
 def home():
     return render_template('main.html')
 @app.route('/', methods=['POST'])
+
 def upload_image():
     if 'file' not in request.files:
         flash('No file part')
@@ -54,4 +55,4 @@ def display_image(filename):
 def ppt():
     return render_template('ppt.html')
 if __name__ == "__main__":
-    app.run(host= '0.0.0.0')
+    app.run(host='0.0.0.0', port=3000)
