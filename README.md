@@ -69,6 +69,7 @@ Supported Docker images for your convenience:
 2. [linux/arm64](https://hub.docker.com/r/vaibhavupreti/handwriting-recognition) - Available on Docker Hub.
 
 ```bash
+docker pull ghcr.io/vaibhavupreti/handwriting-recognition:latest
 docker run -p 3000:3000 <image_id>
 ```
 ### Helm Chart (Kubernetes)
