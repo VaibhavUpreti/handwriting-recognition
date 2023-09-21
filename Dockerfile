@@ -20,7 +20,6 @@ RUN git clone https://github.com/githubharald/CTCWordBeamSearch && \
     cd CTCWordBeamSearch && \
     pip install .
 
-
 WORKDIR /app/src
 
 EXPOSE 3000
