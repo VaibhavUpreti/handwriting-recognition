@@ -96,7 +96,8 @@ class Preprocessor:
             img = np.zeros(self.img_size[::-1])
 
         # data augmentation
-        img = img.astype(np.float)
+        #img = img.astype(np.float)
+        img = img.astype(float)
         if self.data_augmentation:
             # photometric data augmentation
             if random.random() < 0.25:
