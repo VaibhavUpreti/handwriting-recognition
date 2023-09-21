@@ -1,0 +1,6 @@
+apiVersion: v2
+name: helmchart
+description: Helm chart for handwriting recognition webapp
+
+type: application
+version: 0.1.0
